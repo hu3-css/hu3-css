@@ -1,0 +1,87 @@
+.fundo.vazado {
+    background-color: transparent;
+}
+
+.fonte.transparente {
+    color: transparent;
+}
+
+.fundo.branco {
+    background-color: #fff;
+}
+
+.borda.branca {
+    border-color: #fff;
+}
+
+.texto.branqueado {
+    color: #fff;
+}
+
+.fundo.vermelho {
+    background-color: #f00;
+}
+
+.texto.avermelhado {
+    color: #f00;
+}
+
+.borda.vermelha {
+    border-color: #f00;
+}
+
+.fundo.magenta {
+    background-color: #f0f;
+}
+
+.fundo.verde {
+    background-color: #0f0;
+}
+
+.texto.esverdeado {
+    color: #0f0;
+}
+
+.borda.esverdeada {
+    border-color: #0f0;
+}
+
+.fundo.amarelo {
+    background-color: #ff0;
+}
+
+.texto.amarelado {
+    color: #ff0;
+}
+
+.borda.amarela {
+    border-color: #ff0;
+}
+
+.fundo.azul {
+    background-color: #00f;
+}
+
+.texto.azulado {
+    color: #00f;
+}
+
+.borda.azulada {
+    border-color: #00f;
+}
+
+.fundo.ciano {
+    background-color: #0ff;
+}
+
+.fundo.preto {
+    background-color: #000;
+}
+
+.texto.pretejado {
+    color: #000;
+}
+
+.borda.preta {
+    border-color: #000;
+}
