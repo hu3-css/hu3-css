@@ -1,0 +1,13 @@
+// Tema padrao.scss
+.menu-atras {
+    > .menu {
+        background: #123;
+        > li { 
+            color: #eee;
+        }
+        > li:hover {
+            background: #00829D;
+            color: white;
+        }
+    }
+}

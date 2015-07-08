@@ -1,0 +1,43 @@
+﻿@import "global.scss";
+
+.layout-fluido {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.layout-fluido > div {
+    display: inline-block;
+    float: left;
+}
+
+@mixin layout($letra, $max, $min) {
+    @media (min-width: $min) and (max-width: $max) {
+        @for $i from 1 to $num-colunas+1 {
+            .layout-fluido > #{$letra}#{$i} {
+                width: (100%/$num-colunas) * $i;
+            }
+        }
+    }
+}
+@mixin handlerInverso($letra, $max, $min) {
+    @media (min-width: $min) and (max-width: $max) {
+        .layout-fluido.inverso-#{$letra} {
+            -ms-flex-flow: row-reverse wrap;
+            flex-flow: row-reverse wrap;
+        }
+    }
+}
+
+@include layout(xs, 0, $tam-xs);
+@include layout(sm, $tam-xs, $tam-sm);
+@include layout(md, $tam-sm, $tam-md);
+@include layout(lg, $tam-md, $tam-lg);
+@include layout(xlg, $tam-lg, $tam-xlg);
+@include handlerInverso(xs, 0, $tam-xs);
+@include handlerInverso(sm, $tam-xs, $tam-sm);
+@include handlerInverso(md, $tam-sm, $tam-md);
+@include handlerInverso(lg, $tam-md, $tam-lg);
+@include handlerInverso(xlg, $tam-lg, $tam-xlg);

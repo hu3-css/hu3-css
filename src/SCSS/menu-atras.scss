@@ -1,0 +1,57 @@
+
+.menu-atras {
+    position: relative;
+    > .menu {
+        z-index: 3;
+        position: absolute;
+        height: 100%;
+        width: 30%;
+        overflow: auto;
+        > li {
+            padding: 8px;
+            margin: 4px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        > li:hover {
+            background: black;
+            color: white;
+        }
+    }
+    > .conteudo {
+        transition: 1s ease-in-out;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 5;
+        position: relative;
+        background: white;
+    }
+    .abrir-menu {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        background: #00829D;
+        border: 1px solid white;
+        color: white;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.menu-atras.abrir > .conteudo {
+    transform: translateX(30%);
+}
+
+// Tema azul-gelo.sass
+.menu-atras {
+    > .menu {
+        background: #123;
+        > li { 
+            color: #eee;
+        }
+        > li:hover {
+            background: #00829D;
+            color: white;
+        }
+    }
+}
