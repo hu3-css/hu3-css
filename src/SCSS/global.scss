@@ -8,5 +8,10 @@ $tam-md: 1360px;
 $tam-lg: 1920px;
 $tam-xlg: 8192px;
 
+// Uma obs:
+// Eu pensei em usarmos aqui P M G e GG (padrão de tamanhos BR)
+// mas creio que como muita gente usa Bootstrap, Modernizr e Semantic UI essa notação
+// já é um padrão mais conhecido.
+
 // GRADE
 $num-colunas: 12;
