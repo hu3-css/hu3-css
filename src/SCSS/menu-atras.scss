@@ -48,15 +48,19 @@
 // to deixando XS e SM 100% e 50%,
 // MD e LG 300px e 400px respectivamente.
 // depois vamos testando e vendo como fica melhor.
-@media only screen and (min-width: $tam-xs) and (max-width: $tam-sm) { // SM
+@media only screen and (min-width: $tam-xs-min) and (max-width: $tam-xs-max) { // SM
+    .menu-atras > .menu { width: 30%; }
+    .menu-atras.abrir > .conteudo { transform: translateX(30%); }
+}
+@media only screen and (min-width: $tam-sm-min) and (max-width: $tam-sm-max) { // SM
     .menu-atras > .menu { width: 50%; }
     .menu-atras.abrir > .conteudo { transform: translateX(50%); }
 }
-@media only screen and (min-width: $tam-sm) and (max-width: $tam-md) { // MD
+@media only screen and (min-width: $tam-md-min) and (max-width: $tam-md-max) { // MD
     .menu-atras > .menu { width: 300px; }
     .menu-atras.abrir > .conteudo { transform: translateX(300px); }
 }
-@media only screen and (min-width: $tam-md) and (max-width: $tam-lg) { // LG
+@media only screen and (min-width: $tam-lg-min) and (max-width: $tam-lg-max) { // LG
     .menu-atras > .menu { width: 400px }
     .menu-atras.abrir > .conteudo { transform: translateX(400px); }
 }
