@@ -27,3 +27,20 @@ ol, ul { list-style: none; }
 input, textarea, select, button { font-size: 100%;font-family: inherit; }
 select { margin: inherit; }
 hr { margin: 0;padding: 0;border: 0;color: #555;background-color: #555;height: 1px }
+
+.hidden, .oculto {
+    display: none;
+}
+    
+@media print {
+    @page {
+        margin: 0.5cm;
+    }
+    button:not(.imprimivel),
+    form:not(.imprimivel), 
+    a:not(.imprimivel), 
+    nav:not(.imprimivel), 
+    footer:not(.imprimivel) {
+        display: none;
+    }
+}

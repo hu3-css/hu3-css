@@ -1,57 +1,67 @@
+@import "global.scss";
 
-.menu-atras {
-    position: relative;
-    > .menu {
-        z-index: 3;
-        position: absolute;
-        height: 100%;
-        width: 30%;
-        overflow: auto;
-        > li {
-            padding: 8px;
-            margin: 4px;
+@media only screen {
+    .menu-atras {
+        position: relative;
+        > .menu {
+            z-index: 3;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            overflow: hidden;
+            > li {
+                padding: 8px;
+                margin: 4px;
+                border: 1px solid transparent;
+                cursor: pointer;
+            }
+            > li:hover {
+                background: black;
+                color: white;
+            }
+        }
+        > .conteudo {
+            transition: 1s ease-in-out;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 5;
+            position: relative;
+            background: white;
             border: 1px solid transparent;
+        }
+        .abrir-menu {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid transparent;
+            outline: none;
             cursor: pointer;
         }
-        > li:hover {
-            background: black;
-            color: white;
+    }
+    
+    .menu-atras.abrir { 
+        > .conteudo {
+            transform: translateX(100%);
         }
-    }
-    > .conteudo {
-        transition: 1s ease-in-out;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        z-index: 5;
-        position: relative;
-        background: white;
-    }
-    .abrir-menu {
-        display: inline-block;
-        height: 32px;
-        width: 32px;
-        background: #00829D;
-        border: 1px solid white;
-        color: white;
-        outline: none;
-        cursor: pointer;
     }
 }
-
-.menu-atras.abrir > .conteudo {
-    transform: translateX(30%);
+// to deixando XS e SM 100% e 50%,
+// MD e LG 300px e 400px respectivamente.
+// depois vamos testando e vendo como fica melhor.
+@media only screen and (min-width: $tam-xs) and (max-width: $tam-sm) { // SM
+    .menu-atras > .menu { width: 50%; }
+    .menu-atras.abrir > .conteudo { transform: translateX(50%); }
+}
+@media only screen and (min-width: $tam-sm) and (max-width: $tam-md) { // MD
+    .menu-atras > .menu { width: 300px; }
+    .menu-atras.abrir > .conteudo { transform: translateX(300px); }
+}
+@media only screen and (min-width: $tam-md) and (max-width: $tam-lg) { // LG
+    .menu-atras > .menu { width: 400px }
+    .menu-atras.abrir > .conteudo { transform: translateX(400px); }
 }
 
-// Tema azul-gelo.sass
-.menu-atras {
-    > .menu {
-        background: #123;
-        > li { 
-            color: #eee;
-        }
-        > li:hover {
-            background: #00829D;
-            color: white;
-        }
-    }
+@media print {
+    .menu { display: none; }
+    .abrir-menu { display: none; }
 }
