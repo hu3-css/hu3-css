@@ -9,19 +9,36 @@
     flex-flow: row wrap;
 }
 .layout-fluido > div {
-    display: inline-block;
+    display: block;
     float: left;
 }
+
+// não sei se estou certo mas não vejo razão pra isso ser "only screen".
 
 @mixin layout($letra, $max, $min) {
     @media (min-width: $min) and (max-width: $max) {
         @for $i from 1 to $num-colunas+1 {
-            .layout-fluido > #{$letra}#{$i} {
+            .layout-fluido > #{$letra}-#{$i} {
                 width: (100%/$num-colunas) * $i;
             }
         }
     }
 }
+@mixin layout-pular($letra, $max, $min) {
+    @media (min-width: $min) and (max-width: $max) {
+        @for $i from 1 to $num-colunas+1 {
+            .layout-fluido > .pular-#{$letra}-#{$i} {
+                margin-left: (100%/$num-colunas) * $i;
+            }
+        }
+    }
+}
+
+// isso é pra permitir div class="layout-fluido inverso-xs", por exemplo
+// faz a ordem dos elementos ficar invertida num tamanho especifico.
+// ex: Se tem divs A e B ambas com "xs-12 md-6", a A vem na esquerda no md
+// e acima no xs.
+// Se o container for por exemplo inverso-xs, o B vai vir antes do A no modo XS.
 @mixin handlerInverso($letra, $max, $min) {
     @media (min-width: $min) and (max-width: $max) {
         .layout-fluido.inverso-#{$letra} {
@@ -31,13 +48,15 @@
     }
 }
 
-@include layout(xs, 0, $tam-xs);
-@include layout(sm, $tam-xs, $tam-sm);
-@include layout(md, $tam-sm, $tam-md);
-@include layout(lg, $tam-md, $tam-lg);
-@include layout(xlg, $tam-lg, $tam-xlg);
-@include handlerInverso(xs, 0, $tam-xs);
-@include handlerInverso(sm, $tam-xs, $tam-sm);
-@include handlerInverso(md, $tam-sm, $tam-md);
-@include handlerInverso(lg, $tam-md, $tam-lg);
-@include handlerInverso(xlg, $tam-lg, $tam-xlg);
+@include layout(xs, $tam-xs-min, $tam-xs-max);
+@include layout(sm, $tam-sm-min, $tam-sm-max);
+@include layout(md, $tam-md-min, $tam-md-max);
+@include layout(lg, $tam-lg-min, $tam-lg-max);
+@include layout-pular(xs, $tam-xs-min, $tam-xs-max);
+@include layout-pular(sm, $tam-sm-min, $tam-sm-max);
+@include layout-pular(md, $tam-md-min, $tam-md-max);
+@include layout-pular(lg, $tam-lg-min, $tam-lg-max);
+@include handlerInverso(xs, $tam-xs-min, $tam-xs-max);
+@include handlerInverso(sm, $tam-sm-min, $tam-sm-max);
+@include handlerInverso(md, $tam-md-min, $tam-md-max);
+@include handlerInverso(lg, $tam-lg-min, $tam-lg-max);
