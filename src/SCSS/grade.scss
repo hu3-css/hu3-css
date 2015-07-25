@@ -8,10 +8,6 @@
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 }
-.layout-fluido > div {
-    display: block;
-    float: left;
-}
 
 // não sei se estou certo mas não vejo razão pra isso ser "only screen".
 
@@ -20,6 +16,7 @@
         @for $i from 1 to $num-colunas+1 {
             .layout-fluido > #{$letra}-#{$i} {
                 width: (100%/$num-colunas) * $i;
+                display: block;
             }
         }
     }
@@ -29,6 +26,7 @@
         @for $i from 1 to $num-colunas+1 {
             .layout-fluido > .pular-#{$letra}-#{$i} {
                 margin-left: (100%/$num-colunas) * $i;
+                display: block;
             }
         }
     }
