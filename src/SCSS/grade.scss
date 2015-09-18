@@ -24,7 +24,7 @@
 @mixin layout-pular($letra, $max, $min) {
     @media (min-width: $min) and (max-width: $max) {
         @for $i from 1 to $num-colunas+1 {
-            .layout-fluido > .pular-#{$letra}-#{$i} {
+            .layout-fluido > .#{$letra}-pular-#{$i} {
                 margin-left: (100%/$num-colunas) * $i;
                 display: block;
             }
